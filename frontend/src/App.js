@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 function App() {
   return (
     <BrowserRouter>
-      <div className='d-flex flex-column site-container'>
+      <div className="d-flex flex-column site-container">
         <header>
           <NavBar bg="dark" variant="dark">
             <Container>
@@ -28,7 +28,9 @@ function App() {
           </Container>
         </main>
         <footer>
-          <div className='text-center'>All rights reserved to Outstanding Larva</div>
+          <div className="text-center">
+            All rights reserved to Outstanding Larva
+          </div>
         </footer>
       </div>
     </BrowserRouter>
