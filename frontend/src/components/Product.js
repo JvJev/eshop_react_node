@@ -3,7 +3,6 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Rating from './Rating';
 
-
 function ProductComponent(props) {
   const { product } = props;
   return (
@@ -15,7 +14,10 @@ function ProductComponent(props) {
         <Link to={`/product/${product.slug}`}>
           <Card.Title>{product.name}</Card.Title>
         </Link>
-        <Rating rating={product.rating} numReviews={product.numReviews}></Rating>
+        <Rating
+          rating={product.rating}
+          numReviews={product.numReviews}
+        ></Rating>
         <Card.Text>${product.price}</Card.Text>
         <Button>Add to cart</Button>
       </Card.Body>
