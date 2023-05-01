@@ -20,7 +20,7 @@ function App() {
           </NavBar>
         </header>
         <main>
-          <Container className='mt-3'>
+          <Container className="mt-3">
             <Routes>
               <Route path="/product/:slug" element={<ProductPage />} />
               <Route path="/" element={<HomePage />} />
