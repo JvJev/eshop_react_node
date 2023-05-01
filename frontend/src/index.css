@@ -15,6 +15,15 @@ main {
   flex: 1;
 }
 
+.rating span {
+  color: gold;
+}
+
+.btn-primary {
+  background-color: skyblue;
+  color: black;
+}
+
 .products {
   display: flex;
   flex-wrap: wrap;
