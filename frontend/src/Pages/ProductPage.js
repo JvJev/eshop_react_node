@@ -9,6 +9,7 @@ import Badge from 'react-bootstrap/Badge';
 import { useParams } from 'react-router-dom';
 import Rating from '../components/Rating';
 import Button from 'react-bootstrap/Button';
+import { Helmet } from 'react-helmet-async';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -61,6 +62,9 @@ function ProductPage() {
         </Col>
         <Col md={3}>
           <ListGroup.Item variant="flush">
+            <Helmet>
+              <title>{product.name}</title>
+            </Helmet>
             <h1>{product.name}</h1>
           </ListGroup.Item>
           <ListGroup.Item>
