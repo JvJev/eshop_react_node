@@ -8,12 +8,25 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import { Store } from '../context/Store';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import axios from 'axios';
 
 export default function CartPage() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const {
     cart: { cartItems },
   } = state;
+
+  const updateCartHandler = async (item, quantity) => {
+    const { data } = await axios.get(`/api/products/${item._id}`);
+    if (data.countInStock < quantity) {
+        window.alert('Sorry, this products is out of stock');
+        return;
+      }
+      ctxDispatch({
+        type: 'CART_ADD_ITEM',
+        payload: { ...item, quantity },
+      });
+  }
 
   return (
     <div>
@@ -40,12 +53,16 @@ export default function CartPage() {
                       ></img>{' '}
                     </Col>
                     <Col md={3}>
-                      <Button variant="light" disabled={item.quantity === 1}>
+                      <Button variant="light" 
+                                              onClick={() => updateCartHandler(item, item.quantity - 1)}
+
+                      disabled={item.quantity === 1}>
                         <i className="fas fa-minus-circle"></i>
                       </Button>{' '}
                       <span>{item.quantity}</span>{' '}
                       <Button
                         variant="light"
+                        onClick={() => updateCartHandler(item, item.quantity + 1)}
                         disabled={item.quantity === item.countInStock}
                       >
                         <i className="fas fa-plus-circle"></i>
