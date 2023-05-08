@@ -11,7 +11,7 @@ import Card from 'react-bootstrap/Card';
 import axios from 'axios';
 
 export default function CartPage() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const {
     cart: { cartItems },
@@ -31,9 +31,9 @@ export default function CartPage() {
   const removeItemHandler = (item) => {
     ctxDispatch({ type: 'CART_REMOVE_ITEM', payload: item });
   };
-const checkOutHandler = () => {
+  const checkOutHandler = () => {
     navigate('/signin?redirect=/shipping');
-}
+  };
 
   return (
     <div>
