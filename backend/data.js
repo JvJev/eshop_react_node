@@ -1,7 +1,7 @@
 const data = {
   products: [
     {
-      _id: '1',
+      //_id: '1',
       name: 'Nike slim shirt',
       slug: 'nike slim shirt',
       category: 'Shirts',
@@ -14,7 +14,7 @@ const data = {
       description: 'high quality shirt',
     },
     {
-      _id: '2',
+      //_id: '2',
       name: 'Nikeshs slim shirt',
       slug: 'nike sghsslim shirt',
       category: 'Shirts',
@@ -27,7 +27,7 @@ const data = {
       description: 'high quality shirt',
     },
     {
-      _id: '3',
+      //_id: '3',
       name: 'Nikge slim shirt',
       slug: 'nikfge slim shirt',
       category: 'Shirts',
@@ -40,7 +40,7 @@ const data = {
       description: 'high quality shirt',
     },
     {
-      _id: '4',
+      //_id: '4',
       name: 'Nikefgh slim shirt',
       slug: 'nike sfdghslim shirt',
       category: 'Shirts',
