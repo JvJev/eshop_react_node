@@ -4,8 +4,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Axios from 'axios';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Store } from '../context/Store';
+import { toast } from 'react-toastify';
+import { getError } from '../utils';
 
 
 export default function SigninPage() {
@@ -13,11 +15,10 @@ export default function SigninPage() {
   const { search } = useLocation();
   const redirectInUrl = new URLSearchParams(search).get('redirect');
   const redirect = redirectInUrl ? redirectInUrl : '/';
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
   const { state, dispatch: ctxDispatch } = useContext(Store);
+  const {userInfo} = state;
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -30,9 +31,14 @@ export default function SigninPage() {
       localStorage.setItem('userInfo', JSON.stringify(data));
       navigate(redirect || '/');
     } catch (err) {
-      alert('Invalid email or password. Jev.');
-    }
+toast.error(getError(err))    }
   };
+
+  useEffect(() => {
+    if (userInfo) {
+      navigate(redirect);
+    }
+  }, [navigate, redirect, userInfo]);
 
   return (
     <Container className="small-container">
