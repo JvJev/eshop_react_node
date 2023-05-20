@@ -8,6 +8,8 @@ export default function ShippingPage() {
         <title>ShippingPage</title>
       </Helmet>
       <h1 className='my-3'>Shipping address</h1>
+      <Form onsubmit={submitHandler}>
+      </Form>
     </div>
   );
 }
