@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 export default function ShippingPage() {
   const [fullName, setFullName] = useState('');
@@ -60,6 +61,11 @@ export default function ShippingPage() {
             required
           ></Form.Control>
         </Form.Group>
+        <div className="mb-3">
+          <Button variant="primary" type="submit">
+            Continue
+          </Button>
+        </div>
       </Form>
     </div>
   );
