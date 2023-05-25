@@ -15,6 +15,7 @@ import { Store } from './context/Store';
 import CartPage from './Pages/CartPage';
 import SigninPage from './Pages/SigninPage';
 import ShippingPage from './Pages/ShippingPage';
+import SignupPage from './Pages/SignupPage';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -78,6 +79,7 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/cart" element={<CartPage />} />
               <Route path="/signin" element={<SigninPage />} />
+              <Route path="/signup" element={<SignupPage />} />
               <Route path="/shipping" element={<ShippingPage />} />
 
             </Routes>
