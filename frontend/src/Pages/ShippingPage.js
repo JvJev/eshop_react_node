@@ -60,7 +60,7 @@ export default function ShippingPage() {
       <CheckoutSteps step1 step2></CheckoutSteps>
       <div className="container small-container">
         <h1 className="my-3">Shipping address</h1>
-        <Form onsubmit={submitHandler}>
+        <Form onSubmit={submitHandler}>
           <Form.Group className="mb-3" controlId="fullName">
             <Form.Label>Full Name</Form.Label>
             <Form.Control
